@@ -50,7 +50,7 @@ workflows:
             target_platform: "windows-il2cpp"
             editor_version: '2022.3.20f1'
             # resource_class: "medium"
-          project-path: "src"
+          project-path: .
           build-target: "Android"
           compress: true
           context: unity
