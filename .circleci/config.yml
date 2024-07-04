@@ -21,3 +21,10 @@ jobs:
           compress: false
           store-artifacts: false
           persist-to-workspace: true
+
+
+workflows:
+  build-unity-project:
+    jobs:
+      - build-android:
+          context: unity
