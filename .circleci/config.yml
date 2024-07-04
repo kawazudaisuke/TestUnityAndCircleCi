@@ -38,6 +38,7 @@ jobs:
       name: unity/ubuntu
       editor_version: 2022.3.20f1
       resource_class: medium
+      target_platform: android
     steps:
       - checkout
       - unity/build:
