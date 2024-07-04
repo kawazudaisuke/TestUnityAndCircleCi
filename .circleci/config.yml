@@ -48,7 +48,7 @@ workflows:
           # editor-windows-2022.3.20f1-android-3.1.0
             name: 'unity/windows-2022'
             editor_version: '2022.3.20f1'
-            # target_platform: "android"
+            target_platform: "appletv"
             resource_class: "medium"
           project-path: "src"
           build-target: "Android"
