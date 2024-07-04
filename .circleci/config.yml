@@ -1,9 +1,6 @@
-
-
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@2.1.0
   unity: game-ci/unity@1.7.0
 
 jobs:
@@ -11,20 +8,20 @@ jobs:
     executor:
       name: unity/ubuntu
       editor_version: 2022.3.20f1
-      resource_class: xlarge
-      target_platform: android
+      resource_class: medium
+      # target_platform: android
     steps:
       - checkout
-      - unity/prepare-env
+      # - unity/prepare-env
       - unity/build:
           build-target: Android
-          compress: false
-          store-artifacts: false
-          persist-to-workspace: true
+          # compress: false
+          # store-artifacts: false
+          # persist-to-workspace: true
 
 
 workflows:
   build-unity-project:
     jobs:
       - build-android:
-          context: unity
+          # context: unity
