@@ -37,21 +37,31 @@ workflows:
     jobs:
     - unity/create-activation-file:
           name: "create-activation-file"
+    - unity/build:
+        name: "build-android"
+        step-name: "Build Android"
+        unity-license-var-name: "UNITY_ENCODED_LICENSE"
+        unity-username-var-name: "UNITY_USERNAME"
+        unity-password-var-name: "UNITY_PASSWORD"
+        executor:
+          name: "unity/android"
+          target_platform: "android"
+          editor_version: 2022.3.20f1
+          resource_class: "medium"
+        project-path: "src"
+        build-target: "Android"
+         compress: true
+          context: unity
+      #  upload-artifacts:      
+      #   requires: 
+      #     - build-android
 
 #   build-android:
 #     executor:
 #       name: unity/ubuntu
-#       editor_version: 2022.3.20f1
-#       resource_class: medium
-#       target_platform: android
 #     steps:
 #       - checkout
 #       - unity/build:
-#           unity-license-var-name: "UNITY_ENCODED_LICENSE"
-#           unity-username-var-name: "UNITY_USERNAME"
-#           unity-password-var-name: "UNITY_PASSWORD"
-#           project-path: .
-#           build-target: Android
 
 # workflows:
 #   build-unity-android:
