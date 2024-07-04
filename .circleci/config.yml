@@ -1,3 +1,32 @@
+# version: 2.1
+
+# orbs:
+#   unity: game-ci/unity@1.7.0
+
+# jobs:
+#   build-android:
+#     executor:
+#       name: unity/ubuntu
+#       editor_version: 2022.3.20f1
+#       resource_class: medium
+#       # target_platform: android
+#     steps:
+#       - checkout
+#       # - unity/prepare-env
+#       - unity/build:
+#           build-target: Android
+#           # compress: false
+#           # store-artifacts: false
+#           # persist-to-workspace: true
+
+
+# workflows:
+#   build-unity-android:
+#     jobs:
+#       - build-android:
+#           # context: unity
+
+
 version: 2.1
 
 orbs:
@@ -9,19 +38,13 @@ jobs:
       name: unity/ubuntu
       editor_version: 2022.3.20f1
       resource_class: medium
-      # target_platform: android
     steps:
       - checkout
-      # - unity/prepare-env
       - unity/build:
+          project-path: .
           build-target: Android
-          # compress: false
-          # store-artifacts: false
-          # persist-to-workspace: true
-
 
 workflows:
-  build-unity-project:
+  build-unity-android:
     jobs:
-      - build-android:
-          # context: unity
+      - build-android
