@@ -44,9 +44,10 @@ workflows:
           unity-username-var-name: "UNITY_USERNAME"
           unity-password-var-name: "UNITY_PASSWORD"
           executor:
-            name: "unity/ubuntu"
-            target_platform: "android"
+          # windows-2022.3.20f1-android-3.1.0
+            name: "unity/windows"
             editor_version: 2022.3.20f1
+            target_platform: "android"
             resource_class: "medium"
           project-path: "src"
           build-target: "Android"
