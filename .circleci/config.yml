@@ -49,7 +49,7 @@ workflows:
             name: 'unity/windows-2022'
             target_platform: "windows-il2cpp"
             editor_version: '2022.3.20f1'
-            resource_class: "medium"
+            # resource_class: "medium"
           project-path: "src"
           build-target: "Android"
           compress: true
